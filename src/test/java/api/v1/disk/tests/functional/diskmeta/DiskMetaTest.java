@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
-public class GetDiskMetaTest {
+public class DiskMetaTest {
 
     private final DiskMetaApi api = new DiskMetaApi();
 

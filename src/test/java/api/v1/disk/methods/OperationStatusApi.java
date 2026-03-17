@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 
 import java.util.Map;
 
-public class AsyncOperationsApi {
+public class OperationStatusApi {
 
     private static final String BASE = "/operations";
 

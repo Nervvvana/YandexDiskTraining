@@ -1,7 +1,6 @@
 package api.v1.disk.tests;
 
-import api.v1.disk.methods.ResourcesApi;
-import api.v1.disk.methods.TrashApi;
+import api.v1.disk.methods.*;
 import api.v1.disk.services.PathGenerator;
 import api.v1.disk.services.TestDataFactory;
 import org.junit.jupiter.api.AfterAll;
@@ -18,7 +17,13 @@ public abstract class BaseApiTest {
 
     protected ResourcesApi resourcesApi = new ResourcesApi();
 
+    protected PublicResourcesApi publicResourcesApi = new PublicResourcesApi();
+
     protected TrashApi trashApi = new TrashApi();
+
+    protected OperationStatusApi operationStatusApi = new OperationStatusApi();
+
+    protected DiskMetaApi diskMetaApi = new DiskMetaApi();
 
     protected PathGenerator pathGenerator;
 
