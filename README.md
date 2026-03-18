@@ -1,5 +1,10 @@
-Версия alpha 0.1
+Версия alpha-0.2
 
-Реализованы Resources, Trash и Meta методы API.
+Реализованы тесты на все группы методов API
 
-OAuth токен передается в параметре запуска "-DOUATH_TOKEN=<token>"
+Имеется несколько (3-4) flaky-тестов
+
+
+P.S.
+Почему падает тест `SaveResourceTest.Negative.savePublicResourceWithInvalidPublicKey`, понять не могу:
+по факту в тесте прописано 404, а в отчетах пишет что тест ожидает 202/204 статус
