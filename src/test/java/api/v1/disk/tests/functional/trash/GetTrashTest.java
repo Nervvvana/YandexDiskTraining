@@ -20,7 +20,6 @@ public class GetTrashTest extends BaseApiTest {
         @Feature("Получить содержимое корзины")
         @Test
         public void getNonEmptyTrash() {
-
             String path = testData.createResource("file").getPath();
 
             resourcesApi.deleteResource(path)

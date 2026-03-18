@@ -21,7 +21,6 @@ public class RestoreResourceTest extends BaseApiTest {
         @Feature("Восстановить файл из корзины")
         @Test
         public void restoreResourceWithOverwriting() {
-
             Resource resource = testData.createResource("file");
 
             resourcesApi.deleteResource(resource.getPath())
@@ -41,7 +40,6 @@ public class RestoreResourceTest extends BaseApiTest {
             ))
                     .then()
                     .statusCode(anyOf(is(201), is(202)));
-
         }
 
     }
@@ -53,11 +51,9 @@ public class RestoreResourceTest extends BaseApiTest {
         @Feature("Восстановить файл из корзины")
         @Test
         public void restoreNotExistingResource() {
-
             trashApi.restoreResource("/not/exist.txt")
                     .then()
                     .statusCode(404);
-
         }
 
     }

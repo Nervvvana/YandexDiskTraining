@@ -9,6 +9,8 @@ import org.junit.jupiter.api.TestInstance;
 
 import java.util.Map;
 import java.util.UUID;
+import static org.hamcrest.Matchers.anyOf;
+import static org.hamcrest.Matchers.is;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class BaseApiTest {
@@ -45,9 +47,13 @@ public abstract class BaseApiTest {
         resourcesApi.deleteResource(Map.of(
                 "path", ROOT,
                 "permanently", true
-        ));
+                ))
+                .then()
+                .statusCode(anyOf(is(202), is(204)));
 
-        trashApi.clearTrash(Map.of());
+        trashApi.clearTrash(Map.of())
+                .then()
+                .statusCode(anyOf(is(202), is(204)));
     }
 
 }
