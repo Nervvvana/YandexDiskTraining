@@ -2,6 +2,7 @@ package api.v1.disk.services;
 
 import api.v1.disk.methods.ResourcesApi;
 import api.v1.disk.dto.Resource;
+import io.qameta.allure.Step;
 
 import java.io.File;
 
@@ -15,6 +16,7 @@ public class TestDataFactory {
         this.pathGenerator = pathGenerator;
     }
 
+    @Step("Создать ресурс с типом \"{type}\"")
     public Resource createResource(String type) {
 
         if ("folder".equals(type)) {
@@ -24,6 +26,7 @@ public class TestDataFactory {
         return createFile();
     }
 
+    @Step("Создать именнованный файл \"{name}\"")
     public Resource createNamedFile(String name) {
 
         Resource resource = pathGenerator.namedFile(name);
