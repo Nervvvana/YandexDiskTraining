@@ -2,6 +2,8 @@ package api.v1.disk.tests.functional.trash;
 
 import api.v1.disk.dto.Resource;
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +17,8 @@ public class RestoreResourceTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Корзина")
+        @Feature("Восстановить файл из корзины")
         @Test
         public void restoreResourceWithOverwriting() {
 
@@ -45,6 +49,8 @@ public class RestoreResourceTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Корзина")
+        @Feature("Восстановить файл из корзины")
         @Test
         public void restoreNotExistingResource() {
 

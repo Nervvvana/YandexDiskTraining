@@ -1,6 +1,8 @@
 package api.v1.disk.tests.functional.trash;
 
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +17,8 @@ public class ClearTrashTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Корзина")
+        @Feature("Очистить корзину")
         @Test
         public void clearNonEmptyTrash() {
 
@@ -37,6 +41,8 @@ public class ClearTrashTest extends BaseApiTest {
 
         }
 
+        @Epic("Корзина")
+        @Feature("Очистить корзину")
         @Test
         public void clearEmptyTrash() {
 
@@ -57,6 +63,8 @@ public class ClearTrashTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Корзина")
+        @Feature("Очистить корзину")
         @Test
         public void clearTrashWithInvalidResourcePath() {
 

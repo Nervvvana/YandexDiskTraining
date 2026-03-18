@@ -2,6 +2,8 @@ package api.v1.disk.tests.functional.resources;
 
 import api.v1.disk.dto.Resource;
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,6 +18,8 @@ public class PublishResourceTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Ресурсы (файлы и папки)")
+        @Feature("Опубликовать ресурс")
         @ParameterizedTest
         @ValueSource(strings = {"file", "folder"})
         public void publishExistingResource(String type) {
@@ -35,6 +39,8 @@ public class PublishResourceTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Ресурсы (файлы и папки)")
+        @Feature("Опубликовать ресурс")
         @Test
         public void publishNotExistingResource() {
             resourcesApi.publishResource("/not/exist.txt")

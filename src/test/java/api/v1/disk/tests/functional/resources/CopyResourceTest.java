@@ -1,6 +1,8 @@
 package api.v1.disk.tests.functional.resources;
 
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,6 +17,8 @@ public class CopyResourceTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Ресурсы (файлы и папки)")
+        @Feature("Скопировать ресурс")
         @ParameterizedTest
         @ValueSource(strings = {"file", "folder"})
         public void copyResourceDifferentPath(String type) {
@@ -34,6 +38,8 @@ public class CopyResourceTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Ресурсы (файлы и папки)")
+        @Feature("Скопировать ресурс")
         @ParameterizedTest
         @ValueSource(strings = {"file", "folder"})
         public void copySamePathWithoutOverwrite(String type) {
@@ -44,6 +50,8 @@ public class CopyResourceTest extends BaseApiTest {
                     .statusCode(409);
         }
 
+        @Epic("Ресурсы (файлы и папки)")
+        @Feature("Скопировать ресурс")
         @Test
         public void copyNotExistingResource() {
             resourcesApi.copyResource("/not/exist.txt", "/target.txt")

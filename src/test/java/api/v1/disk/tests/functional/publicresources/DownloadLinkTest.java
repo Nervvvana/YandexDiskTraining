@@ -2,6 +2,8 @@ package api.v1.disk.tests.functional.publicresources;
 
 import api.v1.disk.dto.Resource;
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,6 +15,8 @@ public class DownloadLinkTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Публичные ресурсы")
+        @Feature("Получить ссылку на скачивание публичного ресурса")
         @ParameterizedTest
         @ValueSource(strings = {"file", "folder"})
         public void getDownloadLinkWithValidPublicKey(String type) {
@@ -32,6 +36,8 @@ public class DownloadLinkTest extends BaseApiTest {
                     .statusCode(200);
         }
 
+        @Epic("Публичные ресурсы")
+        @Feature("Получить ссылку на скачивание публичного ресурса")
         @ParameterizedTest
         @ValueSource(strings = {"file", "folder"})
         public void getDownloadLinkWithValidPublicUrl(String type) {
@@ -56,6 +62,8 @@ public class DownloadLinkTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Публичные ресурсы")
+        @Feature("Получить ссылку на скачивание публичного ресурса")
         @Test
         public void getDownloadLinkWithInvalidPublicKey() {
             publicResourcesApi.getDownloadLink("invalid_key")

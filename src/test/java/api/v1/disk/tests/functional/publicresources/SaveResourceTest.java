@@ -2,6 +2,8 @@ package api.v1.disk.tests.functional.publicresources;
 
 import api.v1.disk.dto.Resource;
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -16,7 +18,8 @@ public class SaveResourceTest extends BaseApiTest {
     public void cleanupDownloads() {
         resourcesApi.deleteResource(Map.of(
                 "path","disk:/Загрузки",
-                "permanently", true
+                "permanently", true,
+                "force_async", false
                 ))
                 .then()
                 .statusCode(anyOf(is(202), is(204)));
@@ -25,6 +28,8 @@ public class SaveResourceTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Публичные ресурсы")
+        @Feature("Сохранение публичного ресурса на диск")
         @Test
         public void savePublicResourceToDefaultPath() {
             Resource resource = testData.createResource("file");
@@ -49,6 +54,8 @@ public class SaveResourceTest extends BaseApiTest {
                     .statusCode(200);
         }
 
+        @Epic("Публичные ресурсы")
+        @Feature("Сохранение публичного ресурса на диск")
         @Test
         public void savePublicResourceToCustomPath() {
             Resource resource = testData.createResource("file");
@@ -81,6 +88,8 @@ public class SaveResourceTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Публичные ресурсы")
+        @Feature("Сохранение публичного ресурса на диск")
         @Test
         public void savePublicResourceWithInvalidPublicKey() {
             publicResourcesApi.saveResource("invalid_key")

@@ -2,6 +2,8 @@ package api.v1.disk.tests.functional.operationstatus;
 
 import api.v1.disk.dto.Resource;
 import api.v1.disk.tests.BaseApiTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +14,7 @@ public class OperationStatusTest extends BaseApiTest {
     @Nested
     public class Positive {
 
+        @Epic("Получить статус асинхронной операции")
         @Test
         public void getExistingOperationStatus() {
             Resource resource = testData.createResource("file");
@@ -38,6 +41,7 @@ public class OperationStatusTest extends BaseApiTest {
     @Nested
     public class Negative {
 
+        @Epic("Получить статус асинхронной операции")
         @Test
         public void getNotExistingOperationStatus() {
             operationStatusApi.operationStatus("not_existing_id")
