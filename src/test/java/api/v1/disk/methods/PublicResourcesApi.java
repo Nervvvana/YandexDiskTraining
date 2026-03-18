@@ -28,13 +28,13 @@ public class PublicResourcesApi {
         ));
     }
 
-    public Response saveResourceToDownloads(String key) {
+    public Response saveResource(String key) {
         return ApiClient.post(SAVE, Map.of(
                 "public_key", key
         ));
     }
 
-    public Response saveResourceToDownloads(Map<String, Object> params) {
+    public Response saveResource(Map<String, Object> params) {
         return ApiClient.post(SAVE, params);
     }
 
